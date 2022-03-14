@@ -27,11 +27,23 @@ body {
     overflow: hidden;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
 
+    h2 {
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+
+      span {
+        font-size: larger;
+      }
+    }
+
     .quiz-body {
       padding: 2rem;
 
-      h2 {
+      .question {
+        font-size: 1.3rem;
         margin: 0;
+        padding: 1rem;
       }
 
       ul {

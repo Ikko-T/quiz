@@ -9,8 +9,11 @@ const fifthAnswer = document.getElementById('fifth-answer');
 const submitBtn = document.getElementById('submit');
 
 let quizOrder = 0;
+let score = 0;
 
 function loadQuiz() {
+  clearAnswers();
+
   const currentQuiz = quizData[quizOrder];
 
   questionElement.textContent = currentQuiz.question;
@@ -21,9 +24,7 @@ function loadQuiz() {
   fifthAnswer.textContent = currentQuiz.fifth;
 }
 
-loadQuiz();
-
-function selectedAnswer() {
+function selectAnswer() {
   let answer = undefined;
 
   answerElements.forEach((answerElement) => {
@@ -31,6 +32,37 @@ function selectedAnswer() {
       answer = answerElement.id;
     }
   });
-
   return answer;
+}
+
+function checkAnswer() {
+  let answer = selectAnswer();
+
+  if (answer) {
+    if (answer === quizData[quizOrder].correct) {
+      score++;
+    }
+  }
+  return score;
+}
+
+function clearAnswers() {
+  answerElements.forEach((answerElement) => {
+    answerElement.checked = false;
+  });
+}
+
+function moveNextQuiz() {
+  checkAnswer();
+
+  quizOrder++;
+
+  if (quizOrder < quizData.length) {
+    loadQuiz();
+  } else {
+    quiz.innerHTML = `
+                    <h2>You got <span>${score}/${quizData.length}</span> right answers.</h2>
+                    <button onclick="location.reload()">One more try?</button>
+                  `;
+  }
 }
