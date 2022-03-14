@@ -6,8 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js"></script>
   </head>
   <body>
-    <h1>Hello</h1>
+    <div class="container">
+      <h1>Welcome to Quizzy</h1>
+      <div class="quiz-container" id="quiz">
+        <div class="quiz-body">
+          <h2 id="question">Question</h2>
+          <ul>
+            <li>
+              <input type="radio" name="answer" id="first" class="answer" />
+              <label for="first" id="first-answer">Answer</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="second" class="answer" />
+              <label for="second" id="second-answer">Answer</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="third" class="answer" />
+              <label for="third" id="third-answer">Answer</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="forth" class="answer" />
+              <label for="forth" id="forth-answer">Answer</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="fifth" class="answer" />
+              <label for="fifth" id="fifth-answer">Answer</label>
+            </li>
+          </ul>
+        </div>
+        <button type="submit" id="submit">Submit</button>
+      </div>
+    </div>
   </body>
 </html>
