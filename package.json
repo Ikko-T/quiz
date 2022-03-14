@@ -1,0 +1,10 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Ikko-T/quiz.git",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.49.9"
+  }
+}
